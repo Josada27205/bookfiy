@@ -225,6 +225,7 @@ class _WriteChapterPageState extends State<WriteChapterPage> {
                         fontSize: 16.sp,
                         height: 1.8,
                         color: AppColors.textPrimary,
+                        fontFamily: 'Noto Sans Thai', // Support Thai/Lao
                       ),
                       validator: Validators.chapterContent,
                     ),

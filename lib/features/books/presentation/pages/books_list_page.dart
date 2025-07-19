@@ -7,6 +7,7 @@ import '../../domain/usecases/get_books_usecase.dart';
 import '../bloc/book_bloc.dart';
 import '../widgets/book_card.dart';
 import 'book_detail_page.dart';
+import 'search_page.dart';
 
 class BooksListPage extends StatefulWidget {
   const BooksListPage({super.key});
@@ -70,13 +71,13 @@ class _BooksListPageState extends State<BooksListPage>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Welcome back!',
+                            'สวัสดี 👋',
                             style: Theme.of(context).textTheme.bodyMedium
                                 ?.copyWith(color: AppColors.textSecondary),
                           ),
                           SizedBox(height: 4.h),
                           Text(
-                            'Discover amazing stories',
+                            'ค้นพบเรื่องราวที่น่าทึ่ง',
                             style: Theme.of(context).textTheme.headlineSmall
                                 ?.copyWith(fontWeight: FontWeight.bold),
                           ),
@@ -84,7 +85,12 @@ class _BooksListPageState extends State<BooksListPage>
                       ),
                       IconButton(
                         onPressed: () {
-                          // TODO: Implement search
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SearchPage(),
+                            ),
+                          );
                         },
                         icon: Container(
                           padding: EdgeInsets.all(8.w),
@@ -122,9 +128,9 @@ class _BooksListPageState extends State<BooksListPage>
                         fontWeight: FontWeight.w600,
                       ),
                       tabs: const [
-                        Tab(text: 'Trending'),
-                        Tab(text: 'Recent'),
-                        Tab(text: 'Popular'),
+                        Tab(text: 'กำลังฮิต 🔥'),
+                        Tab(text: 'ล่าสุด ✨'),
+                        Tab(text: 'ยอดนิยม ⭐'),
                       ],
                       onTap: (index) {
                         switch (index) {

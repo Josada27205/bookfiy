@@ -65,6 +65,12 @@ class _BookDetailPageState extends State<BookDetailPage> {
               expandedHeight: 300.h,
               pinned: true,
               backgroundColor: AppColors.primaryGreen,
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back, color: AppColors.textWhite),
+                onPressed: () {
+                  Navigator.of(context).popUntil((route) => route.isFirst);
+                },
+              ),
               flexibleSpace: FlexibleSpaceBar(
                 background: Stack(
                   fit: StackFit.expand,

@@ -1,9 +1,12 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_strings.dart';
+import '../../../../injection_container.dart' as di;
+import '../../data/datasources/book_remote_datasource.dart';
 import '../bloc/book_bloc.dart';
 import '../widgets/book_form.dart';
 import 'book_detail_page.dart';
@@ -60,13 +63,28 @@ class CreateBookPage extends StatelessWidget {
                         tags,
                         isAdult,
                       ) async {
-                        // TODO: Upload cover image if provided
+                        String? coverUrl;
+
+                        // Upload cover image if provided
+                        if (coverPath != null) {
+                          try {
+                            final file = File(coverPath);
+                            final bookDataSource = di
+                                .sl<BookRemoteDataSource>();
+                            coverUrl = await bookDataSource.uploadBookCover(
+                              file,
+                            );
+                          } catch (e) {
+                            debugPrint('Failed to upload cover: $e');
+                          }
+                        }
+
                         context.read<BookBloc>().add(
                           CreateBookRequested(
                             title: title,
                             description: description,
                             genres: genres,
-                            coverUrl: null, // Will be updated after upload
+                            coverUrl: coverUrl,
                             tags: tags,
                             isAdult: isAdult,
                           ),
