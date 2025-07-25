@@ -70,14 +70,23 @@ class _AuthTextFieldState extends State<AuthTextField> {
         enabled: widget.enabled,
         maxLines: widget.isPassword ? 1 : widget.maxLines,
         maxLength: widget.maxLength,
-        style: TextStyle(fontSize: 16.sp, color: AppColors.textPrimary),
+        style: TextStyle(
+          fontSize: 16.sp,
+          color: AppColors.textPrimary,
+          fontFamily: 'Noto Sans Thai',
+        ),
         decoration: InputDecoration(
           hintText: widget.hintText,
           labelText: widget.labelText,
-          hintStyle: TextStyle(fontSize: 14.sp, color: AppColors.textHint),
+          hintStyle: TextStyle(
+            fontSize: 14.sp,
+            color: AppColors.textHint,
+            fontFamily: 'Noto Sans Thai',
+          ),
           labelStyle: TextStyle(
             fontSize: 14.sp,
             color: AppColors.textSecondary,
+            fontFamily: 'Noto Sans Thai',
           ),
           prefixIcon: widget.prefixIcon != null
               ? Icon(

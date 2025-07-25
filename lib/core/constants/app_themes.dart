@@ -189,17 +189,17 @@ class AppThemes {
       ),
 
       // Body
-      bodyLarge: GoogleFonts.roboto(
+      bodyLarge: GoogleFonts.notoSansThai(
         fontSize: 16,
         fontWeight: FontWeight.w400,
         color: AppColors.textPrimary,
       ),
-      bodyMedium: GoogleFonts.roboto(
+      bodyMedium: GoogleFonts.notoSansThai(
         fontSize: 14,
         fontWeight: FontWeight.w400,
         color: AppColors.textPrimary,
       ),
-      bodySmall: GoogleFonts.roboto(
+      bodySmall: GoogleFonts.notoSansThai(
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: AppColors.textSecondary,

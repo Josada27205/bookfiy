@@ -94,7 +94,7 @@ class _EnhancedHomePageState extends State<EnhancedHomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'สวัสดี, $userName 👋',
+                        'ສະບາຍດີ, $userName 👋',
                         style: TextStyle(
                           fontSize: 14.sp,
                           color: AppColors.textSecondary,
@@ -102,7 +102,7 @@ class _EnhancedHomePageState extends State<EnhancedHomePage> {
                         ),
                       ),
                       Text(
-                        'มาอ่านอะไรดีวันนี้',
+                        'ມາອ່ານຫຍັງດີມື້ນີ?',
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.bold,
@@ -176,7 +176,7 @@ class _EnhancedHomePageState extends State<EnhancedHomePage> {
                   // Recent Updates
                   if (_recentBooks.isNotEmpty) ...[
                     SizedBox(height: 32.h),
-                    _buildSectionHeader('อัพเดทล่าสุด 🆕', () {}),
+                    _buildSectionHeader('ອັບເດດລ່າສຸດ 🆕', () {}),
                     SizedBox(height: 16.h),
                     _buildHorizontalBookList(_recentBooks),
                   ],
@@ -299,7 +299,7 @@ class _EnhancedHomePageState extends State<EnhancedHomePage> {
                           borderRadius: BorderRadius.circular(12.r),
                         ),
                         child: Text(
-                          '🔥 กำลังฮิต',
+                          '🔥 ກຳລັງຮິດ',
                           style: TextStyle(
                             fontSize: 10.sp,
                             color: AppColors.textWhite,
@@ -320,7 +320,7 @@ class _EnhancedHomePageState extends State<EnhancedHomePage> {
                       ),
                       SizedBox(height: 4.h),
                       Text(
-                        'โดย ${book.authorName}',
+                        'ໂດຍ ${book.authorName}',
                         style: TextStyle(
                           fontSize: 14.sp,
                           color: AppColors.textWhite.withOpacity(0.9),
@@ -339,12 +339,12 @@ class _EnhancedHomePageState extends State<EnhancedHomePage> {
 
   Widget _buildQuickCategories() {
     final categories = [
-      {'icon': '💕', 'title': 'โรแมนติก', 'genre': BookGenre.romance},
-      {'icon': '🔮', 'title': 'แฟนตาซี', 'genre': BookGenre.fantasy},
-      {'icon': '🔍', 'title': 'สืบสวน', 'genre': BookGenre.mystery},
-      {'icon': '😱', 'title': 'สยองขวัญ', 'genre': BookGenre.horror},
-      {'icon': '🚀', 'title': 'ไซไฟ', 'genre': BookGenre.scienceFiction},
-      {'icon': '🎭', 'title': 'ดราม่า', 'genre': BookGenre.drama},
+      {'icon': '💕', 'title': 'ໂລແມນຕິກ', 'genre': BookGenre.romance},
+      {'icon': '🔮', 'title': 'ແຟນຕາຊີນ', 'genre': BookGenre.fantasy},
+      {'icon': '🔍', 'title': 'ສືບສວນ', 'genre': BookGenre.mystery},
+      {'icon': '😱', 'title': 'ສະຍອງຂວັນ', 'genre': BookGenre.horror},
+      {'icon': '🚀', 'title': 'ໄຊໄຟ', 'genre': BookGenre.scienceFiction},
+      {'icon': '🎭', 'title': 'ດຣາມ່າ', 'genre': BookGenre.drama},
     ];
 
     return Container(
@@ -422,7 +422,7 @@ class _EnhancedHomePageState extends State<EnhancedHomePage> {
           TextButton(
             onPressed: onSeeAll,
             child: Text(
-              'ดูทั้งหมด',
+              'ເບິ່ງທັງໝົດ',
               style: TextStyle(
                 fontSize: 14.sp,
                 color: AppColors.primaryGreen,
@@ -559,11 +559,11 @@ class _EnhancedHomePageState extends State<EnhancedHomePage> {
   String _getGenreTitle(BookGenre genre) {
     switch (genre) {
       case BookGenre.fiction:
-        return 'นิยายทั่วไป 📚';
+        return 'ນິຍາຍທົ່ວໄປ 📚';
       case BookGenre.romance:
-        return 'โรแมนติก 💕';
+        return 'ໂລແມນຕິກ 💕';
       case BookGenre.fantasy:
-        return 'แฟนตาซี 🔮';
+        return 'ແນ 🔮';
       case BookGenre.mystery:
         return 'ลึกลับสืบสวน 🔍';
       case BookGenre.horror:
